@@ -1,4 +1,5 @@
-// Extra Memory Cost 
+
+// Extra Memory Cost Calculation
 
 function memoryCost(memoryGB) {
 
@@ -21,7 +22,7 @@ function memoryCost(memoryGB) {
 }
 
 
-// Extra Storage Cost 
+// Extra Storage Cost Calculation
 
 function storageCost(storageGB) {
 
@@ -48,7 +49,7 @@ function storageCost(storageGB) {
 
 }
 
-// Delivery Charge 
+// Delivery Charge Calculation
 
 function deliveryCharge(isAvailable) {
 
@@ -68,7 +69,7 @@ function deliveryCharge(isAvailable) {
 
 }
 
-// Total Cost & Grand Total Cost
+// Total Cost Calculation
 
 function calculateTotalCost() {
 
@@ -87,88 +88,51 @@ function calculateTotalCost() {
 
 
     const totalCost = document.getElementById('total-price');
-    const grandTotal = document.getElementById('grand-total-price');
+    // const grandTotal = document.getElementById('grand-total-price');
 
 
     const totalCostAmount = bestPriceAmount + memoryCostAmount + storageCostAmount + deliveryCostAmount;
 
     totalCost.innerText = totalCostAmount;
-    grandTotal.innerText = totalCostAmount;
+    grandTotalCost(totalCostAmount);
+    // grandTotal.innerText = totalCostAmount;
 
 }
 
 
-// Promo Code and Grand Total Cost 
+
+//Grand Total Cost Calculation
+
+function grandTotalCost(amount) {
+    const grandTotal = document.getElementById('grand-total-price');
+    grandTotal.innerText = amount;
+    return parseFloat(grandTotal.innerText);
+
+}
+
+
+// Promo Code and Grand Total Cost Calculation
 
 document.getElementById('apply-promo-button').addEventListener('click', function () {
     const promoCode = document.getElementById('promo-code');
     if (promoCode.value == 'stevekaku') {
+        const total = document.getElementById('total-price');
+        const totalAmount = parseFloat(total.innerText);
         const grandTotal = document.getElementById('grand-total-price');
-        grandTotalAmount = parseFloat(grandTotal.innerText);
-        grandTotalAmount = grandTotalAmount - (grandTotalAmount * 0.20);
+        let grandTotalAmount = parseFloat(grandTotal.innerText);
+        grandTotalAmount = totalAmount - (totalAmount * 0.20);
         grandTotal.innerText = grandTotalAmount;
         promoCode.value = '';
 
     }
 
     else {
-        console.log('Promo code is not valid');
+        // console.log('Promo code is not valid');
+        alert("Promo code is not valid!");
+        promoCode.value = '';
 
     }
 
 });
-
-
-// Extra Memory Cost
-
-// document.getElementById('memory-8gb').addEventListener('click', function () {
-//     const extraMemoryCostField = document.getElementById('extra-memory-cost');
-//     extraMemoryCostField.innerText = 0;
-
-// });
-
-// document.getElementById('memory-16gb').addEventListener('click', function () {
-//     const extraMemoryCostField = document.getElementById('extra-memory-cost');
-//     extraMemoryCostField.innerText = 180;
-
-// });
-
-// Extra Storage Cost 
-
-// document.getElementById('storage-256gb').addEventListener('click', function () {
-//     const extraMemoryCostField = document.getElementById('extra-storage-cost');
-//     extraMemoryCostField.innerText = 0;
-
-// });
-
-
-// document.getElementById('storage-512gb').addEventListener('click', function () {
-//     const extraMemoryCostField = document.getElementById('extra-storage-cost');
-//     extraMemoryCostField.innerText = 100;
-
-// });
-
-
-// document.getElementById('storage-1tb').addEventListener('click', function () {
-//     const extraMemoryCostField = document.getElementById('extra-storage-cost');
-//     extraMemoryCostField.innerText = 180;
-
-// });
-
-
-// Delivery Charge 
-
-// document.getElementById('free-delivery').addEventListener('click', function () {
-//     const extraMemoryCostField = document.getElementById('delivery-charge');
-//     extraMemoryCostField.innerText = 0;
-
-// });
-
-
-// document.getElementById('charged-delivery').addEventListener('click', function () {
-//     const extraMemoryCostField = document.getElementById('delivery-charge');
-//     extraMemoryCostField.innerText = 20;
-
-// });
 
 

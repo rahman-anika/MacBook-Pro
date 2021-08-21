@@ -15,23 +15,35 @@
 
 <body>
 
-
+    <!-- header starts  -->
     <header>
 
     </header>
+    <!-- header ends  -->
+
+    <!-- main section starts  -->
 
     <main>
         <section class="container mx-auto my-10">
             <div class="grid grid-cols-3 gap-2 pl-24">
+
+                <!-- image  -->
+
                 <div class="pl-32">
                     <img src="images/mac.png" width="100%" height="100%" alt="">
 
                 </div>
 
+
+
+                <!-- Description  -->
+
                 <div class="col-span-2 pl-24">
+
                     <h2 class="text-3xl font-medium">
                         Customize your Blue 24-inch <br> iMac with Apple M1 chip.
                     </h2>
+
 
                     <h4 class="font-normal text-sm pt-2">
                         Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency <br> cores, 7-core GPU,
@@ -39,58 +51,86 @@
                         ports Magic Mouse Magic Keyboard - <br> US English
                     </h4>
 
+
+
                     <!-- Memory  -->
 
                     <h3 class="text-2xl font-bold pt-10 pb-2">Memory</h3>
-                    <button id="memory-8gb" onclick="memoryCost('8gb')" class="border-2 border-black rounded-md p-2">8GB
-                        unified
-                        memory</button>
+                    <button id="memory-8gb" onclick="memoryCost('8gb')"
+                        class="border-2 border-gray-400 rounded-md p-2 hover:bg-black hover:text-white hover:border-black">8GB
+                        unified memory
+                    </button>
+
                     <button id="memory-16gb" onclick="memoryCost('16gb')"
-                        class="border-2 border-black rounded-md p-2 mx-2">16GB unified
-                        memory</button>
+                        class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:bg-black hover:text-white hover:border-black">16GB
+                        unified memory
+                    </button>
 
 
 
                     <!-- Storage  -->
 
                     <h3 class="text-2xl font-bold pt-10 pb-2">Storage</h3>
+
                     <button id="storage-256gb" onclick="storageCost('256gb')"
-                        class="border-2 border-black rounded-md p-2">256GB SSD storage</button>
+                        class="border-2 border-gray-400 rounded-md p-2 hover:bg-black hover:text-white hover:border-black">256GB
+                        SSD storage
+                    </button>
+
                     <button id="storage-512gb" onclick="storageCost('512gb')"
-                        class="border-2 border-black rounded-md p-2 mx-2">512GB SSD
-                        storage</button>
+                        class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:bg-black hover:text-white hover:border-black">512GB
+                        SSD storage
+                    </button>
+
                     <button id="storage-1tb" onclick="storageCost('1tb')"
-                        class="border-2 border-black rounded-md p-2">1TB SSD storage</button>
+                        class="border-2 border-gray-400 rounded-md p-2 hover:bg-black hover:text-white hover:border-black">1TB
+                        SSD storage
+
+                    </button>
 
 
 
                     <!-- Delivery Charge  -->
 
                     <h3 class="text-2xl font-bold pt-10 pb-2">Choose your delivery option</h3>
+
                     <button id="free-delivery" onclick="deliveryCharge(false)"
-                        class="border-2 border-black rounded-md p-2">Friday, Aug 25 FREE Prime
-                        Delivery</button>
+                        class="border-2 border-gray-400 rounded-md p-2 hover:bg-black hover:text-white hover:border-black">Friday,
+                        Aug 25 FREE Prime Delivery
+
+                    </button>
+
+
                     <button id="charged-delivery" onclick="deliveryCharge(true)"
-                        class="border-2 border-black rounded-md p-2 mx-2">Friday, Aug 21
-                        Delivery charge
-                        $20</button>
+                        class="border-2 border-gray-400 rounded-md p-2 mx-2 hover:bg-black hover:text-white hover:border-black">Friday,
+                        Aug 21 Delivery charge $20
+
+                    </button>
+
+
 
 
                     <!-- Price Calculation  -->
 
+                    <!-- Best Price  -->
                     <div class="grid grid-cols-2 gap-2 pt-8">
+
                         <div>
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">Best Price</h3>
                         </div>
+
 
                         <div>
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">$<span id="best-price">1299</span></h3>
                         </div>
                     </div>
 
+
                     <hr style="width:75%;height:2px;border-width:1px" class="mt-4">
 
+                    <!-- Extra Memory Cost  -->
                     <div class="grid grid-cols-2 gap-2 pt-8">
+
                         <div>
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">Extra Memory Cost</h3>
                         </div>
@@ -99,10 +139,15 @@
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">$<span id="extra-memory-cost">0</span></h3>
                         </div>
                     </div>
+
+
                     <hr style="width:75%;height:2px;border-width:1px" class="mt-4">
 
 
+                    <!-- Extra Storage Cost  -->
+
                     <div class="grid grid-cols-2 gap-2 pt-8">
+
                         <div>
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">Extra Storage Cost</h3>
                         </div>
@@ -112,10 +157,14 @@
                             </h3>
                         </div>
                     </div>
+
+
                     <hr style="width:75%;height:2px;border-width:1px" class="mt-4">
 
 
+                    <!-- Delivery Cost  -->
                     <div class="grid grid-cols-2 gap-2 pt-8">
+
                         <div>
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">Delivery charge</h3>
                         </div>
@@ -124,10 +173,15 @@
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">$<span id="delivery-charge">0</span></h3>
                         </div>
                     </div>
+
+
                     <hr style="width:75%;height:2px;border-width:0;color:gray;background-color:gray" class="mt-4">
 
 
+                    <!-- Total Cost  -->
+
                     <div class="grid grid-cols-2 gap-2 pt-8">
+
                         <div>
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">Total Price</h3>
                         </div>
@@ -136,6 +190,8 @@
                             <h3 class="text-2xl font-bold pt-10 pb-2 inline">$<span id="total-price">1299</span></h3>
                         </div>
                     </div>
+
+
                     <hr style="width:75%;height:2px;border-width:1px" class="mt-4">
 
 
@@ -145,10 +201,12 @@
                     <h3 class="text-2xl font-medium mt-10">Add Promo code</h3>
 
                     <input class="border-2 border-grey rounded" type="text" name="" id="promo-code">
+
                     <button id="apply-promo-button" class="bg-red-600 px-4 py-2 text-white">Apply</button>
 
                 </div>
             </div>
+
             <br>
 
 
@@ -159,16 +217,23 @@
             <!-- Grand Total Price  -->
 
             <div>
-                <h3 class="text-2xl font-medium pt-4 pb-2 text-center">Total: $<span id="grand-total-price">1299</span>
-                </h3>
+                <h1 class="text-4xl font-medium pt-4 pb-2 text-center">Total: $<span id="grand-total-price">1299</span>
+                </h1>
             </div>
 
         </section>
     </main>
 
+    <!-- main section ends  -->
+
+    <!-- footer starts  -->
     <footer>
 
     </footer>
+
+    <!-- footer ends  -->
+
+
 
     <!-- js  -->
     <script src="js/script.js"></script>
