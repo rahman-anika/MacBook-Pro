@@ -17,6 +17,9 @@ function memoryCost(memoryGB) {
     }
 
 
+
+    // Update Total Cost 
+
     calculateTotalCost();
 
 }
@@ -45,6 +48,8 @@ function storageCost(storageGB) {
     }
 
 
+    // Update Total Cost 
+
     calculateTotalCost();
 
 }
@@ -64,6 +69,8 @@ function deliveryCharge(isAvailable) {
         extraDeliveryChargeField.innerText = 0;
 
     }
+
+    // Update Total Cost 
 
     calculateTotalCost();
 
@@ -94,6 +101,10 @@ function calculateTotalCost() {
     const totalCostAmount = bestPriceAmount + memoryCostAmount + storageCostAmount + deliveryCostAmount;
 
     totalCost.innerText = totalCostAmount;
+
+
+    // Update Grand Total Cost 
+
     grandTotalCost(totalCostAmount);
     // grandTotal.innerText = totalCostAmount;
 
@@ -106,7 +117,7 @@ function calculateTotalCost() {
 function grandTotalCost(amount) {
     const grandTotal = document.getElementById('grand-total-price');
     grandTotal.innerText = amount;
-    return parseFloat(grandTotal.innerText);
+    // return parseFloat(grandTotal.innerText);
 
 }
 
@@ -120,6 +131,9 @@ document.getElementById('apply-promo-button').addEventListener('click', function
         const totalAmount = parseFloat(total.innerText);
         const grandTotal = document.getElementById('grand-total-price');
         let grandTotalAmount = parseFloat(grandTotal.innerText);
+
+        // 20% promo applied on total cost
+
         grandTotalAmount = totalAmount - (totalAmount * 0.20);
         grandTotal.innerText = grandTotalAmount;
         promoCode.value = '';
